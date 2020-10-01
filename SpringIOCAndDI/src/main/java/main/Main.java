@@ -15,6 +15,7 @@ public class Main {
 //			new AnnotationConfigApplicationContext(DaoFactory.class);
 //		ItemDao dao = context.getBean("create", ItemDao.class);
 		
+		/*
 		GenericXmlApplicationContext context = 
 				new 			GenericXmlApplicationContext("classpath:applicationContext.xml");
 		ItemDao dao = context.getBean("itemDao", ItemDao.class);
@@ -23,5 +24,15 @@ public class Main {
 		System.out.println(item);
 		
 		context.close();
+		*/
+		
+		try(GenericXmlApplicationContext context = new GenericXmlApplicationContext("classpath:applicationContext.xml");) {
+			Item Item = context.getBean(Item.class);
+			System.out.println(Item);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 }

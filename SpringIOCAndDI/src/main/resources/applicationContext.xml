@@ -9,4 +9,23 @@
 	<!-- 
 		<bean id="itemDao" class="dao.ItemDao" />
  	-->
+ 	
+ 	<bean id="item" class="domain.Item">
+		<property name="itemId">
+			<value>1</value>
+		</property>
+		<property name="itemName">
+			<value>키위</value>
+		</property>
+		<property name="price">
+			<value>2000</value>
+		</property>
+		<property name="description">
+			<value>비타민 C가 풍부한 과일</value>
+		</property>
+		<property name="pictureUrl">
+			<value>kiwi.jpg</value>
+		</property>
+	</bean>
+ 	
 </beans>
