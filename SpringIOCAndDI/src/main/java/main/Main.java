@@ -1,14 +1,8 @@
 package main;
 
-import java.util.Set;
-
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-import dao.DaoFactory;
-import dao.ItemDao;
-import domain.CollectionBean;
-import domain.Item;
 import service.UserService;
 
 public class Main {
@@ -66,13 +60,21 @@ public class Main {
 		}
 		*/
 		
+		/*
 		try (GenericXmlApplicationContext context = new GenericXmlApplicationContext("classpath:applicationContext.xml");) {
 			UserService service = context.getBean(UserService.class);
 			System.out.println(service.getUser());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}	
-
+		*/
+		
+		try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(config.AppContext.class);) {
+			UserService service = context.getBean(UserService.class);
+			System.out.println(service.getUser());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
 
 	}
 }
